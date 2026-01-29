@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evander Jay P. Baslot | Computer Science Graduate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --secondary: #111827;
+      --text-dark: #1f2937;
+      --text-medium: #4b5563;
+      --text-light: #6b7280;
+      --bg-light: #f9fafb;
+      --bg-white: #ffffff;
+      --border: #e5e7eb;
+      --radius: 6px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: var(--radius);
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .card {
+      background-color: var(--bg-white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 24px;
+      height: 100%;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+      color: white;
+      padding: 100px 0 80px;
+    }
+
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .header-content h1 {
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-subtitle {
+      font-size: 1.25rem;
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #d1d5db;
+      font-size: 14px;
+    }
+
+    .contact-item i {
+      color: var(--primary);
+    }
+
+    /* About */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      text-align: left;
+    }
+
+    .profile-img-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 4px solid white;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .skill-tag {
+      background-color: var(--primary);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .experience-date {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+    }
+
+    .experience-company {
+      color: var(--text-medium);
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-size: 14px;
+    }
+
+    .experience-details {
+      padding-left: 20px;
+    }
+
+    .experience-details li {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    /* Education */
+    .education-card {
+      text-align: center;
+    }
+
+    .education-year {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+    }
+
+    .education-degree {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .education-institution {
+      color: var(--text-medium);
+      margin-bottom: 1rem;
+      font-size: 14px;
+    }
+
+    .thesis-item {
+      background-color: var(--bg-light);
+      padding: 12px;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+      border-left: 3px solid var(--primary);
+    }
+
+    .thesis-item strong {
+      color: var(--secondary);
+    }
+
+    /* Certification */
+    .certification-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .certification-card h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .certification-score {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .tech-tag {
+      background-color: var(--bg-light);
+      color: var(--text-medium);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Resume Download */
+    .resume-download {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    /* Section Background */
+    .section-bg {
+      background-color: var(--bg-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .header-content {
+        text-align: center;
+      }
+
+      .contact-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .profile-img {
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      .btn {
+        padding: 8px 20px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <h1>Evander Jay P. Baslot</h1>
+        <div class="header-subtitle">Computer Science Graduate</div>
+        
+        <div class="contact-bar">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Purok-3, Zamora, Bilar, Bohol</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>0992 522 9645</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>evanderjaybaslot@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <span>github.com/ejbaslot</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-globe"></i>
+            <span>evander-jay-portfolio.netlify.app</span>
+          </div>
+        </div>
+
+        <div class="resume-download">
+          <a href="Resume_For_Job_Application.pdf" class="btn" download>
+            <i class="fas fa-download"></i> Download Resume (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Professional Summary -->
+  <section id="summary">
+    <div class="container">
+      <h2>Professional Summary</h2>
+      <div class="card">
+        <p>Motivated Computer Science graduate with hands-on experience in government and academic software development projects. Proven ability to develop system features, support project requirements, and collaborate effectively in team environments. Demonstrates strong capability in following instructions, meeting deadlines, and adapting to assigned tasks in professional settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Experience -->
+  <section id="experience" class="section-bg">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      
+      <div class="experience-item">
+        <h3>Software Developer (On-The-Job Training)</h3>
+        <div class="experience-date">June 6 – August 9, 2024</div>
+        <div class="experience-company">Bohol Information and Communication Technology Office, Provincial Government of Bohol</div>
+        <ul class="experience-details">
+          <li>Worked as a programmer for government web projects</li>
+          <li>Assisted in developing features for an official government website</li>
+          <li>Implemented system functions based on provided requirements</li>
+          <li>Worked with other developers and staff in a collaborative environment</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Junior Developer (Auxiliary)</h3>
+        <div class="experience-date">October 18 – November 4, 2024</div>
+        <div class="experience-company">BARMSS Human Rights Survey Application (DLSU SDRC & BISU–Bilar Campus)</div>
+        <ul class="experience-details">
+          <li>Assisted in the development of a survey system for justice and human rights data collection</li>
+          <li>Helped implement application features based on project requirements</li>
+          <li>Participated in testing and improving system functionality</li>
+          <li>Supported the development of mobile and web-based interfaces</li>
+          <li>Worked closely with team members in on-site and remote settings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      
+      <div class="card education-card">
+        <h3>Bachelor of Science in Computer Science</h3>
+        <div class="education-year">2021 – 2025</div>
+        <div class="education-institution">Bohol Island State University – Bilar Campus</div>
+        
+        <div class="thesis-item">
+          <p><strong>Thesis Project:</strong> Chili Pepper Variety Identification System for Agricultural Use</p>
+        </div>
+        
+        <div class="thesis-item">
+          <p><strong>Research Project:</strong> Office Service Feedback System for Service Improvement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section-bg">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Technical Competencies</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Computer Literacy</span>
+            <span class="skill-tag">Basic Programming</span>
+            <span class="skill-tag">Web-Based Systems</span>
+            <span class="skill-tag">System Testing</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3>Professional Skills</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Adaptability</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3>Development Skills</h3>
+          <div class="skill-items">
+            <span class="skill-tag">System Analysis</span>
+            <span class="skill-tag">Software Testing</span>
+            <span class="skill-tag">Project Support</span>
+            <span class="skill-tag">Quality Assurance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2>Academic Projects</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <h3>Chili Pepper Variety Identification System</h3>
+          <p>Academic thesis project focused on developing a system for agricultural use. Utilized image processing techniques to identify different chili pepper varieties to assist farmers in crop management.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Academic Research</span>
+            <span class="tech-tag">Image Processing</span>
+            <span class="tech-tag">System Development</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3>Office Service Feedback System</h3>
+          <p>Research project focused on service improvement through systematic feedback collection and analysis. Developed to help institutions monitor and enhance their service delivery.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Feedback Systems</span>
+            <span class="tech-tag">Service Improvement</span>
+            <span class="tech-tag">Research</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3>BARMSS Human Rights Survey System</h3>
+          <p>Collaborative project with DLSU SDRC & BISU–Bilar Campus focused on developing a comprehensive survey application for justice and human rights data collection.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Survey Systems</span>
+            <span class="tech-tag">Data Collection</span>
+            <span class="tech-tag">Collaborative Development</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification -->
+  <section id="certification" class="section-bg">
+    <div class="container">
+      <h2>Certification</h2>
+      <div class="certification-card">
+        <h3>Civil Service Examination – Professional Level</h3>
+        <div class="certification-score">86.45%</div>
+        <p>Passed with high proficiency rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Information -->
+  <section id="personal">
+    <div class="container">
+      <h2>Personal Information</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Languages</h3>
+          <div class="skill-items">
+            <span class="skill-tag">English (Professional)</span>
+            <span class="skill-tag">Tagalog (Native)</span>
+            <span class="skill-tag">Bisaya (Native)</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3>Personal Details</h3>
+          <div style="line-height: 2;">
+            <div><strong>Birthdate:</strong> July 19, 2002</div>
+            <div><strong>Nationality:</strong> Filipino</div>
+            <div><strong>Civil Status:</strong> Single</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-bg">
+    <div class="container">
+      <h2>Contact Information</h2>
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p>evanderjaybaslot@gmail.com</p>
+          <a href="mailto:evanderjaybaslot@gmail.com" class="btn btn-outline" style="margin-top: 12px; display: inline-block;">Send Email</a>
+        </div>
+        
+        <div class="card contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3>Phone</h3>
+          <p>0992 522 9645</p>
+          <a href="tel:+639925229645" class="btn btn-outline" style="margin-top: 12px; display: inline-block;">Call Now</a>
+        </div>
+        
+        <div class="card contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <h3>GitHub</h3>
+          <p>github.com/ejbaslot</p>
+          <a href="https://github.com/ejbaslot" target="_blank" class="btn btn-outline" style="margin-top: 12px; display: inline-block;">View Profile</a>
+        </div>
+        
+        <div class="card contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Location</h3>
+          <p>Purok-3, Zamora, Bilar, Bohol</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h3 style="color: white; margin-bottom: 1rem;">Evander Jay P. Baslot</h3>
+      <p style="color: #d1d5db; margin-bottom: 1rem;">Computer Science Graduate</p>
+      
+      <div class="social-links">
+        <a href="mailto:evanderjaybaslot@gmail.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+639925229645" class="social-link">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://github.com/ejbaslot" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      
+      <p style="color: #9ca3af; font-size: 14px; margin-top: 2rem;">&copy; 2025 Evander Jay P. Baslot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Download tracking (optional)
+    document.querySelector('a[download]').addEventListener('click', function() {
+      console.log('Resume downloaded');
+    });
+  </script>
+</body>
+</html>

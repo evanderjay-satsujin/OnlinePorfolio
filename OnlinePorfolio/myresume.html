@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evander Jay P. Baslot - Professional Resume</title>
+    <style>
+        /* Modern color palette with DARK TEXT for readability */
+        :root {
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --light-blue: #eff6ff;
+            --text-dark: #1f2937; /* DARK TEXT for readability */
+            --text-medium: #4b5563; /* Medium dark for secondary text */
+            --light-gray: #f9fafb;
+            --border-gray: #e5e7eb;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text-dark); /* DARK TEXT */
+            background-color: #f5f7fa;
+            padding: 20px;
+            margin: 0 auto;
+            font-size: 14px;
+            font-weight: 400; /* Normal weight, not light */
+        }
+
+        /* A4 dimensions: 210mm x 297mm */
+        .resume-container {
+            background: var(--white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 0 auto;
+            padding: 20mm 15mm; /* Safe area for printing */
+            display: grid;
+            grid-template-columns: 1.7fr 1fr;
+            gap: 20px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Elegant header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-blue);
+            grid-column: 1 / -1;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px 15px;
+            margin-top: 10px;
+            font-size: 12.5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-medium); /* DARKER text */
+        }
+
+        .contact-item strong {
+            color: var(--text-dark); /* DARK TEXT */
+            font-weight: 600;
+            min-width: 55px;
+        }
+
+        .profile-photo {
+            width: 110px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 3px;
+            border: 2px solid var(--border-gray);
+        }
+
+        /* Content sections - ALL DARK TEXT */
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin: 15px 0 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--light-blue);
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        h3 {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--text-dark); /* DARK TEXT */
+            margin: 10px 0 3px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .date {
+            font-size: 12.5px;
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        p {
+            margin-bottom: 8px;
+            color: var(--text-dark); /* DARK TEXT - was gray */
+            line-height: 1.5;
+            font-size: 13px;
+            font-weight: 400; /* Normal weight */
+        }
+
+        ul {
+            margin: 5px 0 8px 18px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: var(--text-dark); /* DARK TEXT - was gray */
+            line-height: 1.4;
+            font-size: 13px;
+            font-weight: 400; /* Normal weight */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            background: var(--light-gray);
+            padding: 18px;
+            border-radius: 4px;
+            border-left: 4px solid var(--primary-blue);
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .sidebar h2 {
+            font-size: 15px;
+            margin: 12px 0 6px;
+        }
+
+        .sidebar h2:first-child {
+            margin-top: 0;
+        }
+
+        /* Skills styling */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .skill-tag {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11.5px;
+            font-weight: 500;
+        }
+
+        /* Professional summary */
+        .summary-text {
+            background: var(--light-gray);
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 3px solid var(--primary-blue);
+            line-height: 1.5;
+            font-size: 13px;
+            margin-bottom: 5px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            color: var(--text-dark); /* DARK TEXT */
+        }
+
+        /* Experience and education items */
+        .experience-item, .education-item {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .company, .institution {
+            color: var(--text-medium); /* Darker than before, but not black */
+            font-style: italic;
+            font-size: 12.5px;
+            margin-bottom: 3px;
+            font-weight: 500; /* Slightly bolder */
+        }
+
+        /* Personal info grid */
+        .personal-info {
+            display: grid;
+            gap: 5px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 3px;
+            font-size: 12.5px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark); /* DARK TEXT */
+        }
+
+        .info-value {
+            color: var(--text-medium); /* Medium dark */
+            font-weight: 500; /* Slightly bolder */
+        }
+
+        /* Certification styling */
+        .certification-item p {
+            font-weight: 500; /* Make certification text bolder */
+        }
+
+        /* PRINT STYLES - FIXED FOR SINGLE PAGE AT 100% */
+        @media print {
+            /* Reset everything for printing */
+            body, html {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                background: white !important;
+                font-size: 13px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color: #000000 !important; /* Force black text for print */
+            }
+            
+            /* Remove all page margins */
+            @page {
+                size: A4;
+                margin: 0 !important;
+            }
+            
+            /* Resume container takes full page */
+            .resume-container {
+                width: 210mm !important;
+                min-height: 297mm !important;
+                max-height: 297mm !important;
+                margin: 0 !important;
+                padding: 15mm 12mm !important; /* Safe print area */
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                grid-template-columns: 1.7fr 1fr !important;
+                gap: 15px !important;
+                overflow: visible !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            /* Force everything to stay on one page */
+            .header, .main-content, .sidebar,
+            .experience-item, .education-item,
+            .summary-text, ul {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+            }
+            
+            /* Compact styles for print */
+            .header {
+                margin-bottom: 10px !important;
+                padding-bottom: 10px !important;
+            }
+            
+            h1 {
+                font-size: 26px !important;
+                margin-bottom: 3px !important;
+            }
+            
+            .title {
+                font-size: 15px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            h2 {
+                margin: 10px 0 6px !important;
+                font-size: 15px !important;
+            }
+            
+            h3 {
+                margin: 8px 0 2px !important;
+                font-size: 14px !important;
+                color: #000000 !important; /* Black for print */
+            }
+            
+            p, li {
+                font-size: 12.5px !important;
+                color: #000000 !important; /* Black for print */
+                font-weight: 500 !important; /* Slightly bolder for print */
+            }
+            
+            .contact-info {
+                font-size: 12px !important;
+                gap: 4px 12px !important;
+            }
+            
+            .contact-item {
+                color: #000000 !important; /* Black for print */
+            }
+            
+            .sidebar {
+                padding: 15px !important;
+            }
+            
+            .skill-tag {
+                padding: 3px 8px !important;
+                font-size: 11px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .summary-text {
+                padding: 10px !important;
+                font-size: 12.5px !important;
+                color: #000000 !important; /* Black for print */
+                font-weight: 500 !important; /* Slightly bolder for print */
+            }
+            
+            .experience-item, .education-item {
+                margin-bottom: 12px !important;
+            }
+            
+            .profile-photo {
+                width: 100px !important;
+                height: 120px !important;
+            }
+            
+            .company, .institution {
+                color: #333333 !important; /* Dark gray for print */
+                font-weight: 500 !important;
+            }
+            
+            /* Make ALL text darker for print */
+            .info-label, .info-value {
+                color: #000000 !important;
+                font-weight: 600 !important;
+            }
+            
+            .info-value {
+                font-weight: 500 !important;
+            }
+            
+            .date {
+                color: var(--primary-blue) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        /* Screen adjustments */
+        @media screen and (max-width: 230mm) {
+            body {
+                padding: 15px;
+            }
+            
+            .resume-container {
+                width: 100%;
+                max-width: 210mm;
+                min-height: auto;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .profile-photo {
+                align-self: center;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="resume-container">
+
+    <div class="header">
+        <div class="header-content">
+            <h1>EVANDER JAY P. BASLOT</h1>
+            <div class="title">Computer Science Graduate</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Address:</strong>
+                    <span>Purok-3, Zamora, Bilar, Bohol</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <span>0992 522 9645</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <span>evanderjaybaslot@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <strong>GitHub:</strong>
+                    <span>github.com/ejbaslot</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Portfolio:</strong>
+                    <span>evander-jay-portfolio.netlify.app</span>
+                </div>
+            </div>
+        </div>
+        <img src="mypicture.jpg" alt="Evander Jay P. Baslot" class="profile-photo">
+    </div>
+
+    <div class="main-content">
+
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <div class="summary-text">
+            Motivated Computer Science graduate with hands-on experience in government and academic software development projects. 
+            Proven ability to develop system features, support project requirements, and collaborate effectively in team environments. 
+            Demonstrates strong capability in following instructions, meeting deadlines, and adapting to assigned tasks in professional settings.
+        </div>
+
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+
+        <div class="experience-item">
+            <h3>Software Developer (On-The-Job Training)</h3>
+            <div class="date">June 6 – August 9, 2024</div>
+            <p class="company">Bohol Information and Communication Technology Office, Provincial Government of Bohol</p>
+            <ul>
+                <li>Developed features for government web applications as part of a programming team</li>
+                <li>Contributed to an official government website by implementing system functions based on specified requirements</li>
+                <li>Collaborated with developers and staff in an agile, team-oriented environment</li>
+                <li>Participated in code reviews and quality assurance processes</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Junior Developer (Auxiliary)</h3>
+            <div class="date">October 18 – November 4, 2024</div>
+            <p class="company">BARMSS Human Rights Survey Application (DLSU SDRC & BISU–Bilar Campus)</p>
+            <ul>
+                <li>Assisted in developing a survey system for justice and human rights data collection</li>
+                <li>Implemented application features and functionalities according to project specifications</li>
+                <li>Participated in system testing, debugging, and performance improvement</li>
+                <li>Supported development of both mobile-responsive and web-based interfaces</li>
+                <li>Collaborated with team members in hybrid (on-site and remote) work settings</li>
+            </ul>
+        </div>
+
+        <h2>EDUCATION</h2>
+
+        <div class="education-item">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <div class="date">2021 – 2025</div>
+            <p class="institution">Bohol Island State University – Bilar Campus</p>
+            <ul>
+                <li><strong>Thesis Project:</strong> Chili Pepper Variety Identification System for Agricultural Use</li>
+                <li><strong>Research Project:</strong> Office Service Feedback System for Service Improvement</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="sidebar">
+
+        <h2>TECHNICAL SKILLS</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Computer Literacy</span>
+            <span class="skill-tag">Web Development</span>
+            <span class="skill-tag">System Analysis</span>
+            <span class="skill-tag">Software Testing</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Project Support</span>
+            <span class="skill-tag">Adaptability</span>
+        </div>
+
+        <h2>CERTIFICATION</h2>
+        <div class="certification-item">
+            <p><strong>Civil Service Examination – Professional Level</strong><br>
+            <span style="color: var(--primary-blue); font-weight: 600;">Score: 86.45%</span></p>
+        </div>
+
+        <h2>LANGUAGES</h2>
+        <div class="personal-info">
+            <div class="info-item">
+                <span class="info-label">English</span>
+                <span class="info-value">Professional</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Tagalog</span>
+                <span class="info-value">Native</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Bisaya</span>
+                <span class="info-value">Native</span>
+            </div>
+        </div>
+
+        <h2>PERSONAL DETAILS</h2>
+        <div class="personal-info">
+            <div class="info-item">
+                <span class="info-label">Birthdate</span>
+                <span class="info-value">July 19, 2002</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Nationality</span>
+                <span class="info-value">Filipino</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Civil Status</span>
+                <span class="info-value">Single</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    // Simple print button with instructions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create a simple print button
+        const printBtn = document.createElement('button');
+        printBtn.textContent = '🖨️ Print Resume (A4)';
+        printBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            font-family: inherit;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-size: 14px;
+        `;
+        
+        printBtn.onmouseover = function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 6px 16px rgba(0,0,0,0.25)';
+        };
+        
+        printBtn.onmouseout = function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        };
+        
+        printBtn.onclick = function() {
+            // Print instructions
+            const instructions = `IMPORTANT PRINT SETTINGS:
+            
+1. Paper Size: A4
+2. Scale: 100%
+3. Margins: Default (or Minimum)
+4. Headers & Footers: OFF
+5. Background Graphics: ON
+
+Click OK to open print dialog.`;
+            
+            if (confirm(instructions)) {
+                window.print();
+            }
+        };
+        
+        document.body.appendChild(printBtn);
+        
+        // Remove button when printing
+        const style = document.createElement('style');
+        style.textContent = '@media print { button { display: none !important; } }';
+        document.head.appendChild(style);
+        
+        console.log('Resume optimized with DARK TEXT for better readability.');
+    });
+</script>
+</body>
+</html>
